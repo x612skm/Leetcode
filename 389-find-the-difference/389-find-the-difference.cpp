@@ -1,5 +1,7 @@
 class Solution {
 public:
+    // O(n);
+    //sc = o(1);
     char findTheDifference(string s, string t) {
         char c = 0;
         
