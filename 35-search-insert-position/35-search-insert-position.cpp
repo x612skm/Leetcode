@@ -6,7 +6,8 @@ public:
         
         while(start <= end){
             int mid = start + (end-start)/2;
-            
+            if(nums[mid] == target)
+                start = mid;
             
             if(nums[mid] < target)
                 start = mid+1;
