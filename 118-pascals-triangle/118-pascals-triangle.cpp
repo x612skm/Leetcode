@@ -12,6 +12,7 @@ public:
             
             //traverse for the rest of the rows
             for(int j=1; j<i; j++){
+                //formula for pascal triangle
                 r[i][j] = r[i-1][j-1] + r[i-1][j]; 
             }
         }
