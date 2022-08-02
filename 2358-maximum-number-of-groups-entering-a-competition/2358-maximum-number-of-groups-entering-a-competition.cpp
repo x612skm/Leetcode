@@ -1,20 +1,17 @@
 class Solution {
 public:
     int maximumGroups(vector<int>& grades) {
-        //using the binary search
-        int left = 1; int right = 446;
-        int n = grades.size();
+        //mathematical approach
+        int size = grades.size();
+        int ans = 0;
+        int x = 1;
         
-        while(left < right){
-            int k = (left + right + 1 )/2;
-            
-            if( k*(k+1) / 2 <= n ){
-                left = k;
-            }
-            else
-                right = k-1;
+        while(x<=size){
+            ans++;
+            size -= x;
+            x++;
         }
-        return left;
+        return ans;
     }
 };
 
