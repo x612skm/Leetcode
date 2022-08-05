@@ -14,6 +14,6 @@ public:
             else
                 right=mid-1;
         }
-        return left+k;
+        return left+k;//it is the index + the value of k
     }
 };
