@@ -8,6 +8,8 @@ public:
         
         map<int,int>mp; //unordered_map does not sort the things that why it is req.
         //inserting into the map
+        //map is used when you want something in ordered rateher than the unordered
+        //map is used here coz of the demanding situation of key value with weight
         for(auto i : items1) 
             mp[i[0]] += i[1];
         
