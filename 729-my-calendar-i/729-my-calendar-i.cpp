@@ -8,10 +8,11 @@ public:
     bool book(int start, int end) {
         auto it = mp.upper_bound(start);
         //we check the overflow
-        if(it != mp.end()){
-            if(it->first < end) return false;
+       
+        if( it != mp.end()){
+            if(it->first < end)
+                return false;
         }
-        
         if(it != mp.begin()){
             if(prev(it)->second > start) return false;
         }
