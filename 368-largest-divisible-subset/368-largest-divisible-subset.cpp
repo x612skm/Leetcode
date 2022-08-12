@@ -21,6 +21,8 @@ public:
         for(; max_i >=0; max_i=pred[max_i])
             ans.push_back(nums[max_i]);
         
+        sort(ans.begin(), ans.end());
+        
         return ans;
     }
 };
