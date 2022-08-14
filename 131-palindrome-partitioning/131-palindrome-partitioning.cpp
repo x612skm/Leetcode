@@ -1,30 +1,41 @@
 class Solution {
 public:
-    bool isPalindrome(string& s, int l, int r){
-        while(l<r){
-            if(s[l++] != s[r--])
-                return false;
-        }
-        return true;
+    vector<vector<int>> dp;
+    vector<vector<string>> result;
+    vector<string>storage;
+    
+    bool traverse(string& s,int left, int right){
+        if(dp[left][right] >= 0)
+            return dp[left][right];
+        if(left == right)
+            return dp[left][right] = 1;
+        if(right-left == 1)
+            return dp[left][right] = s[left] == s[right];
+        
+        return dp[left][right] = s[left] == s[right] and traverse(s, left+1, right-1);
+        
     }
-    void par(string& s, int start, vector<vector<string>>& result, vector<string>& path){
-        int n = s.size();
-        if(start == n)//when the starting point is equals to the n
-            result.push_back(path);
-        else{
-            for(int i=start; i<n; i++){
-                if(isPalindrome(s,start,i)){
-                    path.push_back(s.substr(start,i-start+1));
-                    par(s,i+1,result,path);
-                    path.pop_back();//this pop backs the stored in the path
-                }
-            }
+    void build(string&s, int pos){
+        if(pos == s.size()){
+            result.push_back(storage);
+            return;
+        }
+        for(int curr = pos; curr < s.size(); curr++){
+            if(dp[pos][curr]){
+                storage.push_back(s.substr(pos,curr-pos+1));
+                build(s,curr+1);
+                storage.pop_back();
+            }  
         }
     }
     vector<vector<string>> partition(string s) {
-        vector<vector<string>> result;
-        vector<string> path;
-        par(s,0,result,path);
+        dp.resize(s.size(), vector<int>(s.size(),-1));
+        for(int len = 1; len <= s.size(); len++){
+            for(int i=0; i <= s.size()-len; i++){
+                traverse(s,i,i+len-1);
+            }
+        }
+        build(s,0);
         return result;
     }
 };
