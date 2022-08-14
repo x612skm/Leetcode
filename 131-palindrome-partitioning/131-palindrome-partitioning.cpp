@@ -9,14 +9,14 @@ public:
     }
     void par(string& s, int start, vector<vector<string>>& result, vector<string>& path){
         int n = s.size();
-        if(start == n)
+        if(start == n)//when the starting point is equals to the n
             result.push_back(path);
         else{
             for(int i=start; i<n; i++){
                 if(isPalindrome(s,start,i)){
                     path.push_back(s.substr(start,i-start+1));
                     par(s,i+1,result,path);
-                    path.pop_back();
+                    path.pop_back();//this pop backs the stored in the path
                 }
             }
         }
