@@ -1,39 +1,33 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
-        int len = s.size();
-        int dp[len][len];
+        int n = s.size();
+        if(n==0)
+            return "";
+        //make it a true
+        bool dp[n][n];
+        
+        //initlise all the as the false
         memset(dp,0,sizeof(dp));
         
-        int end = 1;
-        int start = 0;
+        for(int i=0; i<n; i++)
+            dp[i][i] = true;
         
-        for(int i=0; i<len; i++){
-            //for calculating the same size
-            dp[i][i] = 1;
-        }
+        string ans = "";
+        ans += s[0]; //start has the palindrome
         
-        for(int i=0; i<len-1; i++){
-            if(s[i] == s[i+1]){
-                dp[i][i+1] = 1;
-                start = i;
-                end = 2;
-            }
-        }
-        
-        for(int j=2; j<len; j++){
-            for(int i=0; i<len-j; i++){
-                int left = i;
-                int right = i+j;
-                
-                if(dp[left+1][right-1] == 1 && s[left]==s[right]){
-                    dp[left][right] = 1;
-                    start = i;
-                    end = j+1;
+        for(int i = n - 1; i >= 0; i--){
+            for (int j = i + 1; j < n; j++){
+                if(s[i] == s[j]){
+                    //if it a 2 character or its substring problem
+                    if (j - i == 1 || dp[i + 1][j - 1]){
+                        dp[i][j] = true;
+                        if(ans.size() < j-i+1)
+                            ans = s.substr(i,j-i+1);
+                    }
                 }
             }
         }
-        return s.substr(start,end);
-        
+        return ans;
     }
 };
