@@ -17,7 +17,7 @@ public:
             ListNode* nextNode = newHead->next;
             if(newHead->val == nextNode->val){
                 newHead->next = nextNode->next;
-                //delete nextNode;
+                delete nextNode;
             }
             else
                 newHead = nextNode;
