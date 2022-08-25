@@ -10,6 +10,7 @@
  */
 class Solution {
 public:
+    //tc O(n) + O(n) = O(n)
     ListNode* oddEvenList(ListNode* head) {
     if(head != NULL){
     ListNode* even = head; ListNode *odd = head->next; ListNode *oddHead = odd;
