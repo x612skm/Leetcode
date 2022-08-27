@@ -1,18 +1,19 @@
 class Solution {
-private:
-    void findSubset(vector<int>& nums, int index, vector<int>&sub, vector<vector<int>>& subs){
-        subs.push_back(sub);
-        for(int j=index; j<nums.size(); j++){
-            sub.push_back(nums[j]);
-            findSubset(nums, j+1, sub, subs);
-            sub.pop_back();
+public:
+    void helper(vector<int>&nums, int index, vector<int>&pick, vector<vector<int>>& storage){
+        storage.push_back(pick);
+        for(int j= index; j<nums.size(); j++){
+            //will iterate over one by one
+            pick.push_back(nums[j]); //pick the first one
+            helper(nums,j+1,pick,storage);//execute into the next one for pick/no pick
+            pick.pop_back();//empty the pick
         }
     }
-public:
     vector<vector<int>> subsets(vector<int>& nums) {
-        vector<int> sub;
-        vector<vector<int>> subs;
-        findSubset(nums,0, sub, subs);
-        return subs;
+        //given this that all the nums are unique
+        vector<int>pick;
+        vector<vector<int>> storage;
+        helper(nums,0,pick,storage);
+        return storage;
     }
 };
