@@ -11,26 +11,24 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        ListNode* dummy = new ListNode();
-        ListNode * temp;
-        
-        temp = dummy;
+        //whenever there is a linkage create a dummy node 
+        ListNode* dummy = new ListNode(0);
+        ListNode* curr;
+        curr= dummy;
         
         while(list1 and list2){
-            if(list1->val < list2->val)
-            {
-                temp -> next = list1;
+            if(list1->val < list2->val){
+                curr -> next = list1;
                 list1 = list1->next;
             }
             else{
-                temp->next = list2;
+                curr->next = list2;
                 list2 = list2->next;
             }
-            temp = temp->next;
+            curr = curr->next;
         }
-        //while if one of it present
-        if(list1) temp->next = list1;
-        if(list2) temp->next = list2;
+        if(list1) curr->next = list1;
+        if(list2) curr->next = list2;
         
         return dummy->next;
     }
