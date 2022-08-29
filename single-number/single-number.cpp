@@ -8,7 +8,7 @@ public:
         for(int i=0; i<n; i++)
             mp[nums[i]]++;
         
-        int count = n+1; int res = -1;
+        int count = INT_MAX; int res = -1;
         for(auto it:mp){
             if(it.second < count){
                 res = it.first;
