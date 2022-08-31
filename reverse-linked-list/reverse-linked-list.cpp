@@ -11,6 +11,7 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
+        //iterative solution
         ListNode* curr = NULL;
         while(head){
             ListNode* nex = head -> next;
