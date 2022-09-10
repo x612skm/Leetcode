@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
+        // tc = O(9X9) and sc = O(9X9)
         //we make vector and set into the vector
         vector<set<int>> col(9);
         vector<set<int>> row(9);
