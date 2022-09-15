@@ -17,6 +17,7 @@ public:
         //to stroe the answer
         for(int i=0; i<n; i++){
             ans = max(ans, lis[i]); //this lis[i] is known to have the lis length
+            lis.clear();
         }
         return ans;
     }
