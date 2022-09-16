@@ -3,7 +3,6 @@ public:
     bool dfs(vector<vector<int>>& graph, int v, vector<int>&dp){
         if(dp[v])
             return dp[v] == 1;
-        
         dp[v] = -1;
         
         for(auto it = graph[v].begin(); it != graph[v].end(); it++){
