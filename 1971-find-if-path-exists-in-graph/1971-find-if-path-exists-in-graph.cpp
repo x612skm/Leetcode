@@ -11,12 +11,18 @@ public:
         
         vector<bool>visited(n,0);
         //since we are implementing bfs here
-        queue<int> q;
+        // queue<int> q;
+        // q.push(source);
+        // visited[source] = 1;
+        
+        //for the dfs part
+        //we make a stack here
+        stack<int>q;
         q.push(source);
         visited[source] = 1;
-        
         while(!q.empty()){
-            int curr = q.front();
+            int curr = q.top();
+            
             q.pop();
             
             if(curr == destination)
