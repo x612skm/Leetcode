@@ -3,8 +3,8 @@ public:
     int findJudge(int n, vector<vector<int>>& trust) {
         //using map data structure
         if(n==1) return 1;
-        map<int,int>first;
-        map<int,int>second;
+        unordered_map<int,int>first;
+        unordered_map<int,int>second;
         
         for(int i=0; i< trust.size(); i++){
             first[trust[i][0]]++;
