@@ -5,7 +5,7 @@ public:
         //only outdegree nodes are the answers
         vector<int>result, seen(n);
         
-        for(auto e : edges){
+        for(auto &e : edges){
             seen[e[1]] = 1;
         }
         for(int i=0; i<n; i++){
@@ -13,6 +13,7 @@ public:
                 result.push_back(i);
         }
         return result;
+        //deallocation of the memory
         seen.clear();
         result.clear();
     }
