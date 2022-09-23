@@ -8,7 +8,7 @@ public:
         while(!st.empty()){
             int i = st.top();
             st.pop();
-            for(auto j : rooms[i]){
+            for(int j : rooms[i]){
                 if(seen.count(j) == 0){
                     st.push(j);
                     seen.insert(j);
