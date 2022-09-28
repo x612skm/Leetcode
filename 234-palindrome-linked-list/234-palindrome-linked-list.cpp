@@ -11,7 +11,7 @@
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
-        ListNode* slow=head; ListNode* fast = head, *prev, *temp;
+        ListNode* slow=head; ListNode* fast = head, *prev = NULL, *temp;
         if(!head and !head->next) return true;
         //find the middle using the tortoise and hare method
         while(fast and fast->next)
@@ -19,10 +19,12 @@ public:
             slow = slow->next;
             fast = fast->next->next;
         }
+        cout<<slow->val;
         //initilise the middle ekement and after that
-        prev= slow;
-        slow = slow->next;
-        prev->next = NULL;
+        // prev= slow;
+        // slow = slow->next;
+        // prev->next = NULL;
+        
         //reverse from the slow and to the end
         while(slow){
             temp = slow->next;
@@ -32,12 +34,13 @@ public:
         }
         //initlise fast to the start and compare the vals
         //equals tends to the true
-        fast = head;
-        slow = prev;
-        while(slow){
-        if(fast->val != slow->val) return false;
-        fast = fast -> next;
-        slow = slow->next;
+        // fast = head;
+        // slow = prev;
+        
+        while(prev){
+        if(head->val != prev->val) return false;
+        head = head -> next;
+        prev = prev->next;
         }
         return true;
     }
