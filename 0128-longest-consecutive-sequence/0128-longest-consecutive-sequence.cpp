@@ -24,5 +24,6 @@ public:
             temp.clear();
         }
         return ans.size();
+        ans.clear();
     }
 };
