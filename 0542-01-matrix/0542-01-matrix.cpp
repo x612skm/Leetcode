@@ -1,7 +1,8 @@
 class Solution {
 public:
     //emplace fn : The container is extended by inserting a new element at position. This new element is constructed in place using args as the arguments for its construction.
-
+    //time complexity is O(row * col);
+    //space complexity is O(1); //this terming as we are modifing the given data
     vector<int> cordinates = {0,1,0,-1,0};
     vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
         int rowsize = mat.size();
