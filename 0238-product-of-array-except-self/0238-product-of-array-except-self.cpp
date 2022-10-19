@@ -7,9 +7,9 @@ public:
         //2. calculate the product and divide it by the a[i];
         int product = 1; int zeroCount = count(nums.begin(), nums.end(), 0);
         if(zeroCount > 1) return vector<int>(size(nums));
-        for(auto n : nums)
+        for(auto& n : nums)
             if(n) product*=n;
-        
+        //passing by the reference of the n
         for(auto& n : nums){
             //there is only a single zero
             if(zeroCount) n = n ? 0 : product; //0 will remain 0 and all will be product
