@@ -22,7 +22,7 @@ public:
             }
         }
         
-        return dp[value][amount];
+        return dp[value][amount];//returning the last block of the matrix
     }
     int coinChange(vector<int>& coins, int amount) {
         int value = coins.size();
