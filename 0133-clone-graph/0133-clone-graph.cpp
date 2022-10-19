@@ -27,7 +27,7 @@ public:
         //using this as the bfs because we have to search for the nodes and the relations
         //at the same time
         //there is a think of the bfs
-         unordered_map<Node*, Node*> mp;
+        unordered_map<Node*, Node*> mp;
         if(node == nullptr) return nullptr;
         //makign a new copy of the node
         Node* copy = new Node(node->val, {});
