@@ -22,20 +22,19 @@ public:
 */
 
 class Solution {
-private:
-    unordered_map<Node*, Node*> copies;
 public:
     Node* cloneGraph(Node* node) {
         //using this as the bfs because we have to search for the nodes and the relations
         //at the same time
         //there is a think of the bfs
+         unordered_map<Node*, Node*> mp;
         if(node == nullptr) return nullptr;
         //makign a new copy of the node
         Node* copy = new Node(node->val, {});
         //since using bfs making a queue for the storage for the curr nodes
         queue<Node*> storage;
         
-        copies[node] = copy;
+        mp[node] = copy;
         storage.push(node);
         
         while(!storage.empty()){
@@ -43,12 +42,14 @@ public:
             storage.pop();
             
             for(Node* neigh : curr -> neighbors){
-                if(copies.find(neigh) == copies.end()){
-                    copies[neigh] = new Node(neigh->val, {});
+                if(mp.find(neigh) == mp.end()){
+                    mp[neigh] = new Node(neigh->val, {});
                     storage.push(neigh);
                 }
                 //this will create the nodes for this
-                copies[curr] -> neighbors.push_back(copies[neigh]);
+                //neigh stands for the curr k neighbours
+                //mp[1] -> neighbors.push_back(mp[2,4]);
+                mp[curr] -> neighbors.push_back(mp[neigh]);
             }
         }
         return copy;
