@@ -1,0 +1,1 @@
+You can just replace "stack" with "vector" and it'll work perfectly since vector has all the functionality of a stack. The only purpose of stack in STL is to make it clearer to the reader.
