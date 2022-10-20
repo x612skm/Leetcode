@@ -17,9 +17,12 @@ public:
         head = nullptr;
     }
     void push(int val) {
+        //if there is nothign in the head
         if(head == nullptr)
             head = new Node(val, val, nullptr);
         else{
+            //if there is in the head
+            //node(val, min, node) //make it minimum
             head = new Node(val, min(val, head->min),head);
             //head= new Node(val, min(val, head->mini), head);
         }
