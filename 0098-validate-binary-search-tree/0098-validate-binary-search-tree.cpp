@@ -13,6 +13,7 @@ class Solution {
 public:
     bool checker(TreeNode* root, long min, long max){
         if(root == nullptr) return true;
+        //that means ekdam right and ekdam left nahi hai root
         if(root->val >= max or root->val <= min) return false;
         return checker(root->left,min, root->val) and checker(root->right,root->val,max);
     }
