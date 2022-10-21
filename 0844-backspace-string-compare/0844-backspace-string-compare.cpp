@@ -1,5 +1,6 @@
 class Solution {
 private:
+    //tc = n
     string compare(string s){
         int count = 0;
         string ans = "";
@@ -14,7 +15,7 @@ private:
                 count--;
             }
         }
-        reverse(ans.begin(), ans.end());
+        reverse(ans.begin(), ans.end()); //O(n)
         return ans;
     }
 public:
