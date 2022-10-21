@@ -1,6 +1,7 @@
 class Solution {
 private:
     //tc = n
+    //sc = o(1)
     string compare(string s){
         int count = 0;
         string ans = "";
