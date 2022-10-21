@@ -13,6 +13,7 @@ private:
             combinationSum(candidates, target-candidates[index], result, temp_storage, index);
             //increasing the index to check the next;
             ++index;
+            cout<<index;
             //back track aagain keeping the numbver out
             temp_storage.pop_back();
         }
