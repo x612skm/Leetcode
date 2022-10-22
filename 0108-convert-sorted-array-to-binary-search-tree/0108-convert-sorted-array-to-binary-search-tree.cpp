@@ -13,7 +13,7 @@ class Solution {
 public:
     TreeNode* construction(vector<int>& nums, int left, int right){
         if(left > right) return NULL;
-        int idx = (left+right)/2;
+        int idx = (left+right) >> 1;
         TreeNode* root = new TreeNode(nums[idx]);
         root->left = construction(nums, left, idx-1);
         root->right = construction(nums, idx+1, right);
