@@ -20,6 +20,7 @@ public:
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
         if(root == nullptr) return false;
         if(compare(root,subRoot)) return true;
+        //just a little change we check either of the side of the tree for subtree
         return isSubtree(root->left, subRoot) or isSubtree(root->right, subRoot);
     }
 };
