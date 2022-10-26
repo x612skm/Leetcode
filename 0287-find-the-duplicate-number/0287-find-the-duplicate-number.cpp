@@ -1,6 +1,8 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
+        //Tc = o(n)
+        //sc = O(n)
         unordered_map<int,int>mp;
         int ans = 0;
         for(auto i : nums){
