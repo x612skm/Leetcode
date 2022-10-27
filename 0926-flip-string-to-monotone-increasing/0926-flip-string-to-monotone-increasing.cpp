@@ -6,11 +6,13 @@ public:
         
         for(auto& ch : s){
             if(ch == '1')
-                counterone++;
+            {counterone++; }
+            
             else
-                counterflip++;
+            {counterflip++; }
             
             counterflip = min(counterone, counterflip);
+            cout<<counterflip;
         }
         return counterflip;
     }
