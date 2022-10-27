@@ -12,7 +12,7 @@ public:
             {counterflip++; }
             
             counterflip = min(counterone, counterflip);
-            cout<<counterflip;
+            
         }
         return counterflip;
     }
