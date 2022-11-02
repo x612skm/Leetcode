@@ -1,22 +1,23 @@
 class Solution {
 private:
-    void dfs(vector<int>&nums, int position, vector<vector<int>>& ans){
-        if(position == nums.size())
+    //using the backtraking format
+    void dfs(vector<int>& nums, int pos, vector<vector<int>>& ans){
+        if(pos == nums.size())
+        {
             ans.push_back(nums);
-        else{
-            for(int i=position; i<nums.size(); i++){
-                swap(nums[i], nums[position]);
-                dfs(nums, position+1, ans);
-                swap(nums[i], nums[position]);
-            }
+            return;
+        }
+        
+        for(int i=pos; i<nums.size(); i++){
+            swap(nums[pos], nums[i]);
+            dfs(nums,pos+1,ans);
+            swap(nums[pos], nums[i]);
         }
     }
 public:
     vector<vector<int>> permute(vector<int>& nums) {
-        int n = nums.size();
-        vector<vector<int>> ans;
-        dfs(nums, 0 , ans);
-        
+         vector<vector<int>> ans;
+        dfs(nums, 0, ans);
         return ans;
     }
 };
