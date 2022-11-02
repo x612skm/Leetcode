@@ -16,5 +16,6 @@ public:
                 result.push_back(intervals[i]);
         }
         return result;
+        result.clear();
     }
 };
