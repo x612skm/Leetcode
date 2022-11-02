@@ -11,8 +11,8 @@ class Solution {
 public:
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
         if(root == nullptr or p == root or q==root) return root;
-        auto lefts = lowestCommonAncestor(root->left, p ,q);
-        auto rights = lowestCommonAncestor(root->right, p, q);
+        TreeNode* lefts = lowestCommonAncestor(root->left, p ,q);
+        TreeNode* rights = lowestCommonAncestor(root->right, p, q);
         
         if(lefts and rights) return root;
         if(lefts) return lefts;
