@@ -11,8 +11,11 @@ public:
     
     string get(string key, int timestamp) {
         auto it = mp[key].upper_bound(timestamp);
+        //cout<<it->first;
         if(it == mp[key].begin()) return "";
+        //cout<<it->first;
         it--;
+        //cout<<it->first;
         return it->second;
     }
 };
