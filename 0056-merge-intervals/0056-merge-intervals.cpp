@@ -4,9 +4,7 @@ public:
         if(intervals.size()<=1)
             return intervals;
         
-        sort(intervals.begin(), intervals.end(), [](vector<int> a, vector<int> b){
-            return a[0] < b[0];
-        });
+        sort(intervals.begin(), intervals.end());
         
         vector<vector<int>> result;
         result.push_back(intervals[0]);
