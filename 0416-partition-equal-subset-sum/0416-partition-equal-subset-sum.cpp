@@ -15,6 +15,7 @@ public:
         //vector<vector<bool>>dp(nums.size()+1, vector<bool>(target+1));
         vector<vector<bool>> dp(nums.size()+1, vector<bool>(target+1));
         
+        //initlise the matrix
         for(int i=0; i<=nums.size(); i++){
             for(int j=0; j<=target; j++){
                 if(i==0 and j==0)
@@ -27,6 +28,7 @@ public:
             }
         }
         
+        //perform the pick and non pick of the elements from the 01 knapsack
         for(int i=1; i<=nums.size(); i++){    
                 //take it or not take it
             for(int j=1; j<=target; j++){
