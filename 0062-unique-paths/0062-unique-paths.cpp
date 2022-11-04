@@ -19,6 +19,6 @@ public:
         return dp[m-1][n-1];
         
         delete [] dp;
-        //delete [] dp;
+        delete [] dp;
     }
 };
