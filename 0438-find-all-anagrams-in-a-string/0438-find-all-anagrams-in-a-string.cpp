@@ -15,6 +15,8 @@ private:
         return true;
     }
     */
+    //abab p=ab
+    //
 public:
     vector<int> findAnagrams(string s, string p) {
         vector<int> ans;
