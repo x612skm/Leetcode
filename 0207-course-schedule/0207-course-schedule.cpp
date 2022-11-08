@@ -18,6 +18,8 @@ public:
         }
         
         while(!q.empty()){
+            int s = q.size();
+            while(s--){
             int curr = q.front();
             q.pop();
             numCourses--;
@@ -26,6 +28,7 @@ public:
                 if(--indegree[child] == 0)
                     q.push(child);
             }
+        }
         }
         return numCourses==0;
         
