@@ -5,10 +5,11 @@ public:
         int count = 0;
         for(auto& it:tasks){
             mp[it]++;
+            //cout<<mp[it];
             count = max(count, mp[it]);
         }
         int ans = (count - 1) * (n + 1);
-        
+        //cout<<ans;
         for(auto& it:mp) if(it.second == count) ans++;
         return max((int)tasks.size(), ans);
    }
