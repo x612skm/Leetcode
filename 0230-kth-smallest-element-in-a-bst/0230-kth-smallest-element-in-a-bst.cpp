@@ -10,12 +10,12 @@
  * };
  */
 class Solution {
-// public:
-// struct comparator{
-//     bool operator()(int l, int r){  
-//        return l > r;  
-//     }
-// };
+public:
+struct comparator{
+    bool operator()(int l, int r){  
+       return l > r;  
+    }
+};
 private:
     void preorder(TreeNode* root, priority_queue<int, vector<int>, greater<int>>&pq){
         //root->Leftright;
