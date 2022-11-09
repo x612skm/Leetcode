@@ -1,20 +1,6 @@
 class Solution {
 private:
     //https://leetcode.com/problems/valid-anagram/ lc 242
-    /*
-     bool isAnagram(string s, string t) {
-      if(s.size() != t.size()) return false; 
-        unordered_map<char,int>mp;
-        int n = s.size();
-        for(int i=0; i<n;i++){
-            mp[s[i]]++;
-            mp[t[i]]--;
-        }
-        for(auto it : mp)
-            if(it.second) return false;
-        return true;
-    }
-    */
     //abab p=ab
     //
 public:
@@ -25,6 +11,7 @@ public:
         unordered_map<int, int> smap;
         
         //cehecking for the zero case 
+        //base checking
         for(int i=0; i<p.size(); i++){
             smap[s[i]]++;
             pmap[p[i]]++;
