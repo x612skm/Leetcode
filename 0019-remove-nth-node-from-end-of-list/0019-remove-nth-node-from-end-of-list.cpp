@@ -18,7 +18,9 @@ public:
         ListNode* slow = dummy;
         ListNode* fast = dummy;
         
-        while(n--)
+        // while(n--)
+        //     fast = fast->next;
+        for(int i=1; i<=n; i++)
             fast = fast->next;
         
         while(fast->next){
