@@ -1,20 +1,15 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
-        //Tc = o(n)
-        //sc = O(n)
-        unordered_map<int,int>mp;
-        int ans = 0;
-        for(auto i : nums){
-            mp[i]++;
+        //applying floyed cycle detection algorithm
+        for(int i=0; i<nums.size(); i++){
+            int index = abs(nums[i])-1;
+            
+            nums[index] = nums[index] * -1;
+            
+            if(nums[index] > 0)
+                return abs(nums[i]);
         }
-        
-        for(auto it : mp){
-            if(it.second > 1){
-                ans += it.first;
-                break;
-            }
-        }
-        return ans;
+        return -1;
     }
 };
