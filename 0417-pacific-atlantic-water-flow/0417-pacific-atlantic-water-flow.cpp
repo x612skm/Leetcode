@@ -1,5 +1,6 @@
 class Solution {
 private:
+    //same template used of FLood fill just add the visited component
     void dfs(vector<vector<int>>&heights, vector<vector<bool>>&visited, int row, int col, int prevheight){
         int m = heights.size();
         int n= heights[0].size();
@@ -19,7 +20,7 @@ public:
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
         int row = heights.size();
         int col = heights[0].size();
-        
+        //checking the adjacent rows and cols to the pacfic and atlantic ocean
         vector<vector<bool>> pac(row, vector<bool>(col, false));
         vector<vector<bool>> atl( row , vector<bool> (col, false));
         
