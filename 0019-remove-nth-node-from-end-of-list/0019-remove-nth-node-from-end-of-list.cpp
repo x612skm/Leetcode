@@ -20,6 +20,7 @@ public:
         
         // while(n--)
         //     fast = fast->next;
+        //just added for loop for better understanding
         for(int i=1; i<=n; i++)
             fast = fast->next;
         
@@ -29,6 +30,7 @@ public:
         }
         slow->next = slow -> next->next;
         return dummy->next;
+        //deallocating the memory
         delete dummy;
     }
 };
