@@ -1,9 +1,13 @@
 class Solution {
 private:
-    void push_zeros_to_end(std::vector<int>& arr){
-            std::stable_partition(arr.begin(),
-                arr.end(),
-                    [](int n) { return n != 0; });
+    void push_zeros_to_end(vector<int>&nums){
+        int k = 0;
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] != 0){
+                swap(nums[i], nums[k]);
+                k++;
+            }
+        }
     }
 public:
     vector<int> applyOperations(vector<int>& nums) {
