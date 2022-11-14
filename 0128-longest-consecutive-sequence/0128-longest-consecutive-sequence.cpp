@@ -24,8 +24,10 @@ public:
             if(temp.size() > ans.size())
                 ans = temp;
             }
-            
+            temp.clear();
         }
+        
         return ans.size();
+        
     }
 };
