@@ -14,7 +14,7 @@ public:
             auto it = mp.find(sum);
             if(it != mp.end()){
                 if(longest_sub < i - mp[sum])
-                    longest_sub = i - mp[sum];
+                {longest_sub = i - mp[sum]; cout<<longest_sub<<" ";}
             }
             else{
                 mp[sum] = i;
