@@ -10,11 +10,10 @@ public:
         for(int i=0; i<(int)nums.size(); i++){
             //add -1 to the sum
             sum += nums[i] == 0 ? -1 : 1;
-            
-            auto it = mp.find(sum);
-            if(it != mp.end()){
-                if(longest_sub < i - mp[sum])
-                {longest_sub = i - mp[sum]; cout<<longest_sub<<" ";}
+            //either the sum will be -1 or 0 therefor update if the sum is not found in map
+            //auto it = mp.find(sum);
+            if(mp.count(sum)){
+                longest_sub = max(longest_sub, i-mp[sum]);
             }
             else{
                 mp[sum] = i;
