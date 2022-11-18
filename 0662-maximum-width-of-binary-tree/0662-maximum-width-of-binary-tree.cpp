@@ -22,14 +22,14 @@ public:
         
         while(!q.empty()){
             int size = q.size();
-            if(size == 1){
-                q.push({q.front().first, 1});
-                q.pop();
-            }
+            // if(size == 1){
+            //     q.push({q.front().first, 1});
+            //     q.pop();
+            // }
             //leftnode - rightnode + 1 is the maxdistance 
             //we have to calculate the distance
             int start  =q.front().second;
-            int end =q.back().second;
+            int end = q.back().second;
             ans = max(end- start + 1, ans);
             
             while(size-- > 0){
