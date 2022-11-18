@@ -5,7 +5,8 @@ public:
         int maxcnt = 0;
         int cnt = 0;
         for(auto i=0; i<s.size(); i++){
-            maxcnt = max(maxcnt, ++mp[s[i]]);
+            int freq = ++mp[s[i]];
+            maxcnt = max(maxcnt, freq); 
             if(cnt - maxcnt < k){
                 cnt++; 
             }
