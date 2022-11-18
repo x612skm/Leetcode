@@ -16,7 +16,7 @@ public:
         if(!root) return 0;
         queue<pair<TreeNode*, int>>q;
         
-        q.push({root,0});
+        q.push({root,1});
         
         int ans = 0;
         
@@ -34,9 +34,9 @@ public:
                 q.pop();
                 
                 if(node -> left)
-                    q.push({node->left, (long long)2 * idx + 1});
+                    q.push({node->left, (long long)2 * idx});
                 if(node -> right)
-                    q.push({node->right, (long long)2 * idx+ 2});
+                    q.push({node->right, (long long)2 * idx+ 1});
             }
         }
         return ans;
