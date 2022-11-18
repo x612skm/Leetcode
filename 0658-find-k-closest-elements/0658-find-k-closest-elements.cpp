@@ -11,7 +11,7 @@ public:
         for(int i=k; i<arr.size(); i++){
             int curr = pq.top();
             pq.pop();
-            cout<<curr<<" ";
+            //cout<<curr<<" ";
             if(arr[i] > curr and abs(curr-x) > abs(arr[i]-x))
                 pq.push(arr[i]);
             else
