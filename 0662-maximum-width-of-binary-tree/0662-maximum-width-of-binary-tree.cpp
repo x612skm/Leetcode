@@ -23,15 +23,17 @@ public:
         while(!q.empty()){
             int size = q.size();
             
-            int start  =q.front().second;
+            int start = q.front().second;
             int end = q.back().second;
             ans = max(end- start + 1, ans);
             
             while(size-- > 0){
-                auto node = q.front().first;
-                auto idx =  q.front().second- start;//to avoid the overflow considering it a skew tree
-                //auto [node, idx] = q.front();
+                // auto node = q.front().first;
+                // auto idx =  q.front().second- start;//to avoid the overflow considering it a skew tree
+                auto [node, idx] = q.front();
                 q.pop();
+                
+                idx = idx - start;
                 
                 if(node -> left)
                     q.push({node->left, (long long)2 * idx});
