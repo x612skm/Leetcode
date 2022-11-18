@@ -12,10 +12,7 @@
 class Solution {
 public:
     int widthOfBinaryTree(TreeNode* root) {
-        /**
-        what i need is bfs in bfs we have a queue we push it into the vector and find the ans
-        calculate between the non null nodes in the right and left
-        */
+        
         if(!root) return 0;
         queue<pair<TreeNode*, int>>q;
         
@@ -30,8 +27,9 @@ public:
                 q.pop();
             }
             //leftnode - rightnode + 1 is the maxdistance 
-            int start  = q.front().second;
-            int end = q.back().second;
+            //we have to calculate the distance
+            int start  =q.front().second;
+            int end =q.back().second;
             ans = max(end- start + 1, ans);
             
             while(size-- > 0){
