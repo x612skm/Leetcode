@@ -52,7 +52,9 @@ public:
         ListNode* l2 = sortList(slow);
         
         return mergeTwoLists(l1, l2);
-        
+        delete temp;
+        delete slow;
+        delete fast;
  
         
     }
