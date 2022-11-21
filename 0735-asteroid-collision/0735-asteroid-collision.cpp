@@ -10,6 +10,7 @@ public:
                 //case 1 when the abs(ast[i]) is greater or equal to 
                 while(!st.empty() and st.top() > 0 and st.top() < abs(ast[i]))
                     st.pop();
+                //case when the first one is positiobe and the next one is euqal negative
                 if(!st.empty() and st.top() == abs(ast[i]))
                     st.pop();
                 else 
