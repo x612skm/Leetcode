@@ -37,7 +37,7 @@ public:
             }
             ans.push_back(temp);
             //level = !level; //*
-            level == 0? level = 1 : level = 0;
+            level == 0 ? level = 1 : level = 0;
         }
         return ans;
     }
