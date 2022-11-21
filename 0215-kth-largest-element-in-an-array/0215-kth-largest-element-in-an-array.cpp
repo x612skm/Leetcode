@@ -7,12 +7,12 @@ public:
         }
         
         for(int i=k; i<nums.size(); i++){
-            int curr = pq.top();
-            pq.pop();
-            if(nums[i] > curr)
+            
+            if(nums[i] > pq.top()){
+                pq.pop();
                 pq.push(nums[i]);
-            else
-                pq.push(curr);
+            }
+            
         }
         return pq.top();
     }
