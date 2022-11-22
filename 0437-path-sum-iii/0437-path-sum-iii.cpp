@@ -10,18 +10,25 @@
  * };
  */
 class Solution {
+    int ans = 0;
 private:
-    int count(TreeNode* root, long int targetSum){
-        int ans = 0;
-        if(!root) return 0;
-        return (root->val == targetSum ? 1 : 0) + count(root->left, targetSum - root->val) + count(root->right, targetSum-root->val);
+    void count(TreeNode* root, long int targetSum){
+        if(!root) return;
+        if(root->val == targetSum)
+            ans++;
         
-        //return ans;
-        
+        count(root->left, targetSum - root->val);
+        count(root->right, targetSum- root->val);
     }
 public:
     int pathSum(TreeNode* root, int targetSum) {
-        if(!root) return 0;
-        return count(root, targetSum) + pathSum(root->left,targetSum) + pathSum(root->right, targetSum);
+        //int ans;
+        if(root)
+        {
+            count(root, targetSum);
+            pathSum(root->left, targetSum);
+            pathSum(root->right, targetSum);
+        }
+        return ans;
     }
 };
