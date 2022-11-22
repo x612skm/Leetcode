@@ -1,5 +1,5 @@
 class Solution {
-    struct comp{
+    struct compare{
         bool operator() (int a, int b) {
             string comb1 = to_string(a) + to_string(b);
             string comb2 = to_string(b) + to_string(a);
@@ -9,7 +9,7 @@ class Solution {
 public:
      
     string largestNumber(vector<int>& nums) {
-        sort(nums.begin(), nums.end(), comp());
+        sort(nums.begin(), nums.end(), compare());
         
         if(nums[0] == 0) return "0";
         
