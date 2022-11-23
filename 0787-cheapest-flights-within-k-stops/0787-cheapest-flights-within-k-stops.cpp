@@ -13,6 +13,7 @@ public:
                 //chekcing from the distance and updating in distance
                 if(distance[s] == INT_MAX)
                     continue;
+                // INF > 100+1 = temp[1] of the d
                 if(temp[d] > distance[s] + p)//finding the min distance from the main
                     temp[d] = distance[s] + p;
             }
