@@ -10,14 +10,15 @@ public:
             vector<int>temp = distance;
             for(auto& flight : flights){
                 int s = flight[0]; int d = flight[1]; int p =flight[2];
-                
+                //chekcing from the distance and updating in distance
                 if(distance[s] == INT_MAX)
                     continue;
-                if(temp[d] > distance[s] + p)
+                if(temp[d] > distance[s] + p)//finding the min distance from the main
                     temp[d] = distance[s] + p;
             }
             distance = temp;
         }
+        //according to the givn question condition we write it as as -1 if found negative
         return distance[dst] == INT_MAX ? -1 : distance[dst];
     }
 };
