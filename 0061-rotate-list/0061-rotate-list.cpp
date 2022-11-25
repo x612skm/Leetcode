@@ -24,7 +24,7 @@ public:
         //leetcode rotate array concept
         //leetcode 189
         k = k % size;
-        
+        k%=size;
         int curr = 0;
         while(tail and tail->next and size-curr != k){
             tail = tail->next;
