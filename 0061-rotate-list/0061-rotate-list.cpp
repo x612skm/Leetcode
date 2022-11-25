@@ -19,9 +19,7 @@ public:
             tail = tail->next;
             size++;
         }
-        cout<<size;
         tail->next = head; //circle the linkedlist
-        
         k = k % size;
         int curr = 0;
         while(tail and tail->next and size-curr != k){
