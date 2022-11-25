@@ -20,12 +20,17 @@ public:
             size++;
         }
         tail->next = head; //circle the linkedlist
+        
+        //leetcode rotate array concept
+        //leetcode 189
         k = k % size;
+        
         int curr = 0;
         while(tail and tail->next and size-curr != k){
             tail = tail->next;
             curr++;
         }
+        
         ListNode* newhead = tail->next;
         tail->next = NULL;
         return newhead;
