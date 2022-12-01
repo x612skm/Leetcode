@@ -17,7 +17,7 @@ public:
                 
                 row[i].insert(curr);
                 col[j].insert(curr);
-                block[(i/3)*3 + (j/3)].insert(curr);
+                block[(i/3)*3+(j/3)].insert(curr);
             }
         }
         return true;
