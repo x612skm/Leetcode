@@ -17,9 +17,8 @@ private:
 public:
     bool isBalanced(TreeNode* root) {
         if(!root) return true;
-        int leftheight = height(root->left);
-        int rightheight = height(root->right);
-        int diff = abs(leftheight - rightheight);
+        
+        int diff = abs(height(root->left) - height(root->right));
         
         if(diff > 1) return false;
         if(!isBalanced(root->left)) return false;
