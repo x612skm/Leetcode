@@ -22,7 +22,6 @@ public:
                 st.push(curr->right);
                 swap(curr->left, curr->right);
             }
-            
         }
         return root;
     }
