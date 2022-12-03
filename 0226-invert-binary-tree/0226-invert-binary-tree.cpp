@@ -12,16 +12,17 @@
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
-        stack<TreeNode*> st;
+        stack<TreeNode*>st;
         st.push(root);
         while(!st.empty()){
-            TreeNode* p = st.top();
+            TreeNode* curr = st.top();
             st.pop();
-            if(p){
-                st.push(p->left);
-                st.push(p->right);
-                swap(p->left, p->right);
+            if(curr){
+                st.push(curr->left);
+                st.push(curr->right);
+                swap(curr->left, curr->right);
             }
+            
         }
         return root;
     }
