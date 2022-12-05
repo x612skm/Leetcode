@@ -5,6 +5,7 @@ Memory Usage: 7 MB, less than 53.00% of C++ online submissions for Longest Repea
 class Solution {
 public:
     int characterReplacement(string s, int k) {
+        //making a char map
         unordered_map<char, int>mp;
         int maxcnt = 0;
         int cnt = 0;
