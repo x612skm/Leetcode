@@ -11,10 +11,9 @@
  */
 class Solution {
 private:
-    bool compare(TreeNode* root1 , TreeNode*root2){
-        if(root1 == nullptr or root2==nullptr) return root1 == root2;
-        //if(root1->val == root2->val) return true;
-        return root1->val == root2->val and compare(root1->left, root2->left) and compare(root1->right, root2->right);
+    bool compare(TreeNode* left_side, TreeNode* right_side){
+        if(left_side == nullptr or right_side == nullptr) return left_side == right_side;
+        return left_side->val == right_side->val and compare(left_side->left, right_side->left) and compare(left_side->right, right_side->right);
     }
 public:
     bool isSameTree(TreeNode* p, TreeNode* q) {
