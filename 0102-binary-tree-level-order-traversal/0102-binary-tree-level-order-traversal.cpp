@@ -9,6 +9,9 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+// Runtime: 0 ms, faster than 100.00% of C++ online submissions for Binary Tree Level Order Traversal.
+// Memory Usage: 12.7 MB, less than 17.26% of C++ online submissions for Binary Tree Level Order Traversal.
+
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
