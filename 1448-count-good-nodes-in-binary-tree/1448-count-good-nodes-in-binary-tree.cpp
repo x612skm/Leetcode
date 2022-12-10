@@ -11,19 +11,20 @@
  */
 class Solution {
 private:
-    void count(TreeNode* root, int& cnt, int currmax){
+    void dfs(TreeNode* root, int currmax, int& cnt){
+        //int cnt=0; 
         if(!root) return;
         if(root->val >= currmax){
             cnt++;
             currmax = root->val;
         }
-        count(root->left, cnt, currmax);
-        count(root->right, cnt, currmax);
+        dfs(root->left, currmax, cnt);
+        dfs(root->right, currmax, cnt);
     }
 public:
     int goodNodes(TreeNode* root) {
-        int cnt = 0;
-        count(root, cnt, root->val);
-        return cnt;
+        int count = 0;
+        dfs(root, root->val, count);
+        return count;
     }
 };
