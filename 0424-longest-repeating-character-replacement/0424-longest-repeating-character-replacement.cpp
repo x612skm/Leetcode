@@ -8,7 +8,7 @@ public:
             int freq = ++mp[s[i]];
             maxcnt = max(maxcnt, freq);
             
-            if(cnt - maxcnt < k) cnt++;
+            if(cnt - maxcnt < k) cnt++;// 0-1=> 1 // 1-1 // 2-2 // 3-2 // <k
             else mp[s[i-cnt]]--;
         }
         return cnt;
