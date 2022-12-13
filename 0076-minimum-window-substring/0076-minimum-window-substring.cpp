@@ -11,6 +11,7 @@ public:
         while(end < sz){
             if(mp[s[end]] > 0)
                 counter--;
+            //the count will go into negative 
             mp[s[end]]--;
             end++;
             
@@ -19,12 +20,15 @@ public:
                 if(end - start < minlen){
                     minstart = start;
                     minlen = end - start;
+                    
                 }
                 
                 mp[s[start]]++;
+                //cout<<s[start]<<" ";
                 if(mp[s[start]] > 0)
                     counter++;
                 start++;
+                //cout<<start<<" ";
             }
         }
         return minlen == INT_MAX ? "" : s.substr(minstart, minlen);
