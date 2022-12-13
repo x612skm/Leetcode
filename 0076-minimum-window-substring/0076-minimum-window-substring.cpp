@@ -1,29 +1,32 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-        unordered_map<int,int>mp;
-        int counter = t.size();
-        int begin = 0; int end = 0, d = INT_MAX, head = 0;
-        
-        //make it into the map
-        for(auto c:t){
+        unordered_map<char, int>mp;
+        for(auto c : t)
             mp[c]++;
-        }
-        //ADOBECODEBANC t=ABC
-        while(end < s.size()){
-            if(mp[s[end++]]-- > 0){
+        
+        size_t start = 0, end = 0, counter = size(t), minstart = 0, minlen = INT_MAX;
+        size_t sz = s.size();
+        
+        while(end < sz){
+            if(mp[s[end]] > 0)
                 counter--;
-            }
+            mp[s[end]]--;
+            end++;
             
             while(counter == 0){
-                if(end - begin < d){
-                    head = begin;
-                    d= end - head;
+                //take the shortest length
+                if(end - start < minlen){
+                    minstart = start;
+                    minlen = end - start;
                 }
-                if(mp[s[begin++]]++ == 0)
+                
+                mp[s[start]]++;
+                if(mp[s[start]] > 0)
                     counter++;
+                start++;
             }
         }
-        return d == INT_MAX ? "" : s.substr(head,d);
+        return minlen == INT_MAX ? "" : s.substr(minstart, minlen);
     }
 };
