@@ -1,34 +1,34 @@
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
-        //solving it in o(log n) means to divide it into two
-        int left = 0; int right = nums.size()-1;
-        while(left <= right){
-            int mid = left + (right - left)/2;
-            //checking the 3 condiotns
+        //rotated sorted array
+        //base case if the element itself present in the middle
+        //will be threee cases to be followed 
+        int start = 0; int end = nums.size()-1;
+        while(start <= end){
+            int mid = (start + end) >> 1;
             
-            if(target == nums[mid])
+            if(nums[mid] == target)
                 return mid;
             
-            else if(nums[mid] > nums[right]){
-                //we will search the left side
-                if(nums[mid] > target and nums[left]<=target)
-                    right = mid -1;
+            else if(nums[mid] < nums[start]){
+                if(nums[mid] < target and nums[end] >= target)
+                    start = mid+1;
                 else
-                    left = mid + 1;
+                    end = mid-1;
             }
-            else if(nums[mid] < nums[left]){
-                //search in the right side
-                if(nums[mid] < target and nums[right] >= target)
-                    left = mid +1;
+            else if(nums[mid] > nums[end]){
+                if(nums[mid] > target and nums[start] <= target)
+                    end = mid-1;
                 else
-                    right = mid-1;
+                    start = mid + 1;
             }
-            else
+            else{
                 if(target > nums[mid])
-                    left = mid + 1;
+                    start = mid +1;
                 else
-                    right = mid -1;
+                    end = mid-1;
+            }
         }
         return -1;
     }
