@@ -1,6 +1,6 @@
 class TimeMap {
 public:
-    unordered_map<string, map<int,string>>mp;
+    unordered_map<string, map<int, string>>mp;
     TimeMap() {
         
     }
@@ -11,11 +11,8 @@ public:
     
     string get(string key, int timestamp) {
         auto it = mp[key].upper_bound(timestamp);
-        //cout<<it->first;
         if(it == mp[key].begin()) return "";
-        //cout<<it->first;
-        it--;
-        //cout<<it->first;
+        --it;
         return it->second;
     }
 };
