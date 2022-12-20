@@ -8,23 +8,21 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+//logic will be as followed we reverse the secondhalf of the list then merge the list
 class Solution {
 private:
-     ListNode* reverseList(ListNode* head) {
-        ListNode* prev= NULL;
-        
+    ListNode* reverseList(ListNode* head){
+        ListNode* prev = NULL;
         while(head){
-            ListNode * curr = head->next;
+            ListNode* next = head->next;
             head->next = prev;
             prev = head;
-            head = curr;
-            
+            head = next;
         }
         return prev;
     }
-private:
     void merge(ListNode* head1, ListNode* head2){
-        while(head1!= NULL and head2 != NULL){
+        while(head1 and head2){
             ListNode* next = head1->next;
             head1->next = head2;
             head1 = head2;
@@ -33,19 +31,16 @@ private:
     }
 public:
     void reorderList(ListNode* head) {
-        if(head==nullptr or head->next == nullptr) return;
-        ListNode* slow = head;
+        if(!head and !head->next)
+            return;
         ListNode* fast = head;
+        ListNode* slow = head;
         while(fast and fast->next){
             slow = slow->next;
             fast = fast->next->next;
         }
-        //reverse the list
         ListNode* head2 = reverseList(slow->next);
-        slow->next = NULL;
-        //mergelist
-        merge(head, head2);
-        
-        
+        slow->next = nullptr;
+        merge(head,head2);
     }
 };
