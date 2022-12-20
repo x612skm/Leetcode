@@ -9,28 +9,23 @@
  * };
  */
 class Solution {
-    // TC = O(n) + O(n) = O(n);
-    //SC = O(1);
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* dummy = new ListNode();
-        dummy->next = head;
+        dummy -> next = head;
         ListNode* slow = dummy;
         ListNode* fast = dummy;
         
-        // while(n--)
-        //     fast = fast->next;
-        //just added for loop for better understanding
-        for(int i=1; i<=n; i++)
+        for(int i=1; i<=n; i++){
             fast = fast->next;
+        }
         
         while(fast->next){
-            fast = fast->next;
             slow = slow->next;
+            fast = fast->next;
         }
-        slow->next = slow -> next->next;
+        slow->next = slow->next->next;
         return dummy->next;
-        //deallocating the memory
         delete dummy;
     }
 };
