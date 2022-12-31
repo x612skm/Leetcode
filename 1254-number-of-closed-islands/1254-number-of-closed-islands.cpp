@@ -15,6 +15,7 @@ private:
 public:
     int closedIsland(vector<vector<int>>& grid) {
         int count = 0;
+        //mark all the zeroes that are connected to the border as -1
         for(int i=0; i<grid.size(); i++){
             for(int j=0; j<grid[0].size(); j++){
                 if((i==0 or j==0 or i==grid.size()-1 or j==grid[0].size()-1) and grid[i][j] == 0)
