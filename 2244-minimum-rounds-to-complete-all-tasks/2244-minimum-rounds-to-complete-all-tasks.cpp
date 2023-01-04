@@ -17,9 +17,6 @@ public:
                 count += it.second/3 + 1;
             }
         }
-        if(count)
-           return count;
-        else
-            return -1;
+        return count;
     }
 };
