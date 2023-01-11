@@ -1,5 +1,6 @@
 class Solution {
 private:
+    //when we have to get sub island we have to use the and operator
     bool dfs(vector<vector<int>>& grid1, vector<vector<int>>& grid2, int i, int j){
         //condtions for the out of bound 
         if(i<0 or j<0 or i==grid1.size() or j==grid1[0].size() or grid2[i][j] == 0)
