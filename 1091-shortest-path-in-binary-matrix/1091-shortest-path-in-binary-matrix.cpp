@@ -13,8 +13,7 @@ public:
         
         int pathcount = 1;
         
-        vector<int> xcordinates = {-1,-1,-1,0,0,1,1,1};
-        vector<int> ycordinates = {-1,0,1,-1,1,-1,0,1};
+        vector<int> cordinates = {-1, 0, -1, 1, 1, 0, 1, -1, -1};
         
         //if(grid[0][0] == 0) return -1;
         
@@ -33,8 +32,8 @@ public:
                 if(row == rowsize-1 and col == colsize-1) return pathcount;
                 
                 for(int i=0; i<8; i++){
-                    int neigh_row = row + xcordinates[i];
-                    int neigh_col = col + ycordinates[i];
+                    int neigh_row = row + cordinates[i];
+                    int neigh_col = col + cordinates[i+1];
                     //checking for the out of bound conditons
                     if(neigh_row >=0 and neigh_col >=0 and neigh_row < rowsize and neigh_col < colsize and grid[neigh_row][neigh_col] ==0){
                     grid[neigh_row][neigh_col] = 1;
