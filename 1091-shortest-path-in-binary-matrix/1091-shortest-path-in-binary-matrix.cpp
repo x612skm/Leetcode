@@ -8,7 +8,9 @@ public:
         //remained the same for the row and cols 
         
         queue<pair<int,int>> visited;
+        //edge case
         if(grid[0][0] == 1 or grid[rowsize-1][colsize-1] == 1) return -1;
+        
         int pathcount = 1;
         
         vector<int> xcordinates = {-1,-1,-1,0,0,1,1,1};
