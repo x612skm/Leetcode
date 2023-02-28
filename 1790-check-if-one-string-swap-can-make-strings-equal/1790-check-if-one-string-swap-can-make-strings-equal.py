@@ -1,3 +1,6 @@
+#Runtime: 23 ms, faster than 98.03% of Python3 online submissions for Check if One String Swap Can Make #Strings Equal.
+#Time Complexity : O(n) where n is the number of input strings.
+#Space Complexity : O(1) we are not using any separate space
 class Solution:
     def areAlmostEqual(self, s1: str, s2: str) -> bool:
         #first I have to check for the length of the both strings
